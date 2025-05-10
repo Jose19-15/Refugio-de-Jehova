@@ -248,13 +248,28 @@ body {
     transform: translateY(-5px);
 }
 
+.pastor-img-container{
+    overflow: hidden;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgb(0, 0, 0, 0.1);
+    margin-bottom: 15px;
+    transition: all 0.3s ease;
+}
+
 .pastor-img {
-    width: 160px;
-    height: 180px;
-    border-radius: 50%;
+   width: 100%;
+   height: auto;
+   display: block;
+   transition: trans;
+}
+
+.pastor-img-fixed {
+    width: 120px;
+    height: 120px;
     object-fit: cover;
-    border: 4px solid var(--primary-color);
-    margin-bottom: 1rem;
+    border-radius: 10px;
+    display: block;
+    margin: 0 auto 15px auto;
 }
 
 .pastor-name {
@@ -274,6 +289,69 @@ body {
     font-size: 0.9rem;
 }
 
+/* Estilos adicionales para la ubicación */
+.map-link {
+    color: #1a73e8;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.map-link:hover {
+    text-decoration: underline;
+    color: #0d5bba;
+}
+
+.embedded-map {
+    margin-top: 15px;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.branch-card {
+    padding: 20px;
+    border-radius: 8px;
+    background: #fff9f9;
+    box-shadow: 0 2px 15px rgba(0,0,0,0.05);
+    transition: transform 0.3s ease;
+}
+
+.branch-card:hover {
+    transform: translateY(-5px);
+}
+
+.branch-card i {
+    margin-right: 8px;
+    color: #4a6baf;
+}
+
+.quick-actions {
+    display: flex;
+    gap: 10px;
+    margin-top: 20px;
+    flex-wrap: wrap;
+}
+
+.action-btn {
+    display: inline-flex;
+    align-items: center;
+    padding: 10px 15px;
+    background: #ffffff;
+    color: rgb(8, 8, 8);
+    border-radius: 5px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.action-btn:hover {
+    background: #3a5a9f;
+    transform: translateY(-2px);
+}
+
+.action-btn i {
+    margin-right: 8px;
+}
+
 /* Sección de Sedes */
 .branches {
     padding: 4rem 0;
@@ -283,6 +361,13 @@ body {
 .branches-container {
     margin-top: 2rem;
 }
+
+.branches-img {
+    position: relative;
+    right: 0;
+    top: 0;
+}
+    
 
 .main-branch {
     background-color: var(--primary-color);
@@ -331,6 +416,136 @@ body {
     margin-bottom: 0.5rem;
     display: flex;
     align-items: center;
+}
+
+/* Logos de Ministerios */
+.ministry-logo {
+    width: 100px;
+    height: 100px;
+    object-fit: contain;
+    margin-bottom: 0.7rem;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Imágenes de sedes (iglesia central y filiales) */
+.branch-img-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 1rem;
+    margin-bottom: 0.5rem;
+}
+
+.branch-img {
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(44,62,80,0.10);
+    border: 2px solid #e6e6e6;
+}
+
+/* Organización horizontal para branch-card con imagen */
+.branch-card,
+.main-branch {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 1.5rem;
+}
+
+.branch-content,
+.main-branch-content {
+    flex: 1 1 0;
+    min-width: 0;
+}
+
+.branch-img-container {
+    flex-shrink: 0;
+}
+
+@media (max-width: 900px) {
+    .branch-card,
+    .main-branch {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0.5rem;
+    }
+    .branch-img,
+    .branch-img-container {
+        margin: 0 auto 1rem auto;
+    }
+}
+
+/* ====== MINISTERIOS ====== */
+.ministries {
+    padding: 60px 0;
+    background: #f8f9fa;
+}
+
+.ministries .section-title {
+    text-align: center;
+    font-size: 2.2rem;
+    margin-bottom: 2.5rem;
+    color: #2d3a4a;
+    font-weight: 700;
+}
+
+.ministries-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 2rem;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.ministry-card {
+    background: #fff;
+    border-radius: 16px;
+    box-shadow: 0 2px 16px rgba(44,62,80,0.08);
+    padding: 2rem 1.5rem 1.5rem 1.5rem;
+    text-align: center;
+    transition: transform 0.18s, box-shadow 0.18s;
+    border: 1px solid #e6e6e6;
+}
+
+.ministry-card:hover {
+    transform: translateY(-6px) scale(1.03);
+    box-shadow: 0 6px 24px rgba(44,62,80,0.13);
+}
+
+.ministry-icon {
+    font-size: 2.8rem;
+    color: #2d89ef;
+    margin-bottom: 1rem;
+    display: block;
+}
+
+.ministry-title {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #2d3a4a;
+    margin-bottom: 0.5rem;
+}
+
+.ministry-description {
+    font-size: 1rem;
+    color: #555;
+    margin-bottom: 0;
+}
+
+/* Responsive para ministerios */
+@media (max-width: 700px) {
+    .ministries-grid {
+        grid-template-columns: 1fr;
+        gap: 1.2rem;
+    }
+    .ministry-card {
+        padding: 1.2rem 0.8rem;
+    }
 }
 
 /* Sección de Contacto */
@@ -414,6 +629,56 @@ body {
     transform: translateY(-3px);
 }
 
+/* Sección de Calendario */
+.calendar-section {
+    padding: 60px 0 40px 0;
+    background: #f4f8fb;
+}
+
+.calendar-table-container {
+    overflow-x: auto;
+    margin: 0 auto;
+    max-width: 900px;
+}
+
+.calendar-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 12px rgba(44,62,80,0.07);
+    overflow: hidden;
+}
+
+.calendar-table th,
+.calendar-table td {
+    padding: 14px 10px;
+    text-align: left;
+    border-bottom: 1px solid #eaeaea;
+}
+
+.calendar-table th {
+    background: var(--primary-color);
+    color: #fff;
+    font-weight: 600;
+}
+
+.calendar-table tr:last-child td {
+    border-bottom: none;
+}
+
+.calendar-table tbody tr:hover {
+    background: #eaf6ff;
+}
+
+/* Responsive */
+@media (max-width: 700px) {
+    .calendar-table th, .calendar-table td {
+        padding: 10px 6px;
+        font-size: 0.95rem;
+    }
+}
+
 /* Footer */
 .footer {
     background-color: var(--secondary-color);
@@ -473,6 +738,71 @@ body {
     text-align: center;
     padding: 20px 0;
     border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.footer-social-stats {
+    margin-top: 20px;
+}
+
+.footer-social-stats h3 {
+    margin-bottom: 15px;
+    font-size: 1.2rem;
+    color: var(--primary-color);
+}
+
+.social-stats-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.social-stats-list li {
+    margin-bottom: 10px;
+}
+
+.social-stats-list a {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: var(--light-color);
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 1.1rem;
+    transition: color 0.2s;
+}
+
+.social-stats-list a:hover {
+    color: var(--primary-color);
+}
+
+.social-label {
+    min-width: 70px;
+    display: inline-block;
+}
+
+.social-count {
+    background: #fff;
+    color: var(--primary-color);
+    border-radius: 12px;
+    padding: 2px 10px;
+    font-size: 1rem;
+    font-weight: bold;
+    margin-left: 8px;
+}
+
+.visit-counter {
+    margin-top: 10px;
+    color: var(--light-color);
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    justify-content: center;
+}
+
+.visit-counter i {
+    color: var(--primary-color);
+    font-size: 1.2rem;
 }
 
 /* Responsive Design */
